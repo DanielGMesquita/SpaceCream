@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+body{
+    background: #EFF1FF;
+    font-family: 'Staatliches', cursive;
+    margin: auto 0;
+}
+
+header{
+    background: #8E9AAF;
+}
+
+.brand{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3.2rem 0 2.9rem;
+    gap: 3.2rem;
+}
+
+.brand svg{
+    align-self: center;
+    width:max-content;
+    height: max-content;
+}
+
+header h1{
+    background: #CBC0D3;
+    text-align: center;
+    font-style: normal;
+    font-size: 4.0rem;
+    color: #FFFFFF;
+    letter-spacing: 5px;
+    text-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.25);
+    line-height: 3.4rem;
+    padding: 0.8rem 0;
+}
+
+header img{
+    padding: 3.2rem 0;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.4rem 3.2rem 6.0rem;
+}
+
+.page p{
+    text-align: center;
+    font-family: 'Palanquin', sans-serif;
+    color: #23053A;
+    font-size: 2.0rem;
+    line-height: 2.5rem;
+    margin-bottom: 6.3rem;
+    max-width: 32rem;
+}
+
+.page .images{
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+}
+
+.image-settings{
+    display: block;
+    position: relative;
+    width: 32rem;
+}
+
+.image-settings img{
+    position: relative;
+    animation-name: up;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes up {
+    from{top: 2.0rem; opacity: 0;}
+    to {top: 0rem; opacity: 1;}
+}
+
+.image-settings label{
+    padding: 0 2.4rem 0;
+    font-size: 2.0rem;
+    color: #4A4E69;
+    letter-spacing: 0.05em;
+    line-height: 3.4rem;
+    background: #FEEAFA;
+    border-radius: 2.0rem;
+    position: absolute;
+    right: 1.6rem;
+    top: 1.6rem;
+    animation-name: down;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes down {
+    from{top:-2rem; opacity: 0;}
+    top{top:0rem; opacity: 1;}
+}
