@@ -6,12 +6,90 @@
 
 :root{
     font-size: 62.5%;
+    --bc-header:#8E9AAF;
+    --bc-page: #eff1FF;
 }
 
 body{
-    background: #EFF1FF;
+    background: var(--bc-page);
     font-family: 'Staatliches', cursive;
     margin: auto 0;
+}
+
+@media (min-width:900px){
+    body{
+        height: 100vh;
+        display: grid;
+        grid-template-areas:
+        "A B B"
+        "A B B"
+        "A C C";
+    }
+
+    header{
+        min-width: 30rem;
+        grid-area: A;
+    }
+
+    header .text p{
+        color: #FFFFFF;
+        background: #8E9AAF;
+        padding-top: 3.2rem;
+    }
+
+    main{
+        grid-area: B;
+    }
+
+    main .page{
+        grid-template-areas: 
+        "A B C"
+        "D B F"
+        "D E F";
+        gap:3.2rem;
+        margin: 6.4rem 9.8rem auto;
+    }
+
+    .page div:nth-child(1){
+        grid-area: A;
+    }
+    .page div:nth-child(2){
+        grid-area: B;
+    }
+    .page div:nth-child(3){
+        grid-area: C;
+    }
+    .page div:nth-child(4){
+        grid-area: D;
+    }
+    .page div:nth-child(5){
+        grid-area: E;
+    }
+    .page div:nth-child(6){
+        grid-area: F;
+    }
+
+    .image-settings img{
+        max-width: 22rem;
+    }
+
+    footer{
+        grid-area: C;
+        margin:5rem auto 4.6rem;
+    }
+}
+
+@media (min-width:1200px){
+    header{
+        width: 40rem;
+    }
+
+    header .text p{
+        color: #FFFFFF;
+        background: #8E9AAF;
+        font-size: 2.4rem;
+        padding-top: 3.2rem;
+    }
 }
 
 header{
@@ -22,14 +100,44 @@ header{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 3.2rem 0 2.9rem;
+    padding: 3.2rem 0 0;
     gap: 3.2rem;
 }
 
-.brand svg{
-    align-self: center;
+.brand .logo{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width:max-content;
     height: max-content;
+}
+
+.logo svg:nth-child(1){
+    position: absolute;
+    animation: spin 3s 0ms infinite backwards;
+}
+
+@keyframes spin{
+    35%{
+        transition-property: transform;
+        transition-delay: 0s;
+        transform: rotate(-20deg) translateX(15rem);
+        z-index: +1;
+    }
+
+    70%{
+        z-index: +1;
+        transform: rotate(-20deg) translateX(-15rem);
+    }
+    
+    100%{
+        transform: rotate(-20deg);
+    }
+}
+
+.logo svg:nth-child(2){
+    position: relative;
 }
 
 header h1{
@@ -48,36 +156,39 @@ header img{
     padding: 3.2rem 0;
 }
 
-.page{
+main{
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.4rem 3.2rem 6.0rem;
+    
+
 }
 
-.page p{
+.text p{
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.4rem 6.3rem 6.3rem;
+    background: var(--bc-page);
     text-align: center;
     font-family: 'Palanquin', sans-serif;
     color: #23053A;
     font-size: 2.0rem;
     line-height: 2.5rem;
-    margin-bottom: 6.3rem;
-    max-width: 32rem;
 }
 
-.page .images{
-    display: flex;
-    flex-direction: column;
+.page{
+    display: grid;
     gap: 3.6rem;
 }
 
 .image-settings{
-    display: block;
     position: relative;
-    width: 32rem;
 }
 
 .image-settings img{
+    width: 32rem;
+    border-radius: 20px;
     position: relative;
     animation-name: up;
     animation-duration: 2s;
@@ -108,4 +219,17 @@ header img{
 @keyframes down {
     from{top:-2rem; opacity: 0;}
     top{top:0rem; opacity: 1;}
+}
+
+footer{
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
