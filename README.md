@@ -1,6 +1,6 @@
-<h1>Landing Page MobileFirst</h1>
+<h1>Landing Page Temática de Sorveteria</h1>
 Tecnologias utilizadas: HTML e CSS
 <hr>
-Funcionalidades aprendidas: animações no CSS
+Funcionalidades aprendidas: CSS com animações, transições e display grid.
 <hr>
-Pontos de melhoria: tornar responsiva para outros dispositivos
+Pontos de melhoria: responsividade dos itens e textos.
